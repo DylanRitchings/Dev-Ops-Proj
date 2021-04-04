@@ -6,7 +6,7 @@ resource "aws_vpc" "vpc" {
   cidr_block       = var.vpc-cidr-block
   instance_tenancy = "default"
   tags = {
-    project = "terraform"
+    project = "dev_ops_project"
   }
 }
 
@@ -17,7 +17,7 @@ resource "aws_subnet" "My_Subnet" {
   map_public_ip_on_launch = true
 
   tags = {
-    project = "terraform"
+    project = "dev_ops_project"
   }
 }
 
@@ -28,7 +28,7 @@ resource "aws_subnet" "My_Subnet_2" {
   map_public_ip_on_launch = true
 
   tags = {
-    project = "terraform"
+    project = "dev_ops_project"
   }
 }
 
@@ -41,7 +41,7 @@ resource "aws_internet_gateway" "vpc_igw" {
   # }
 
   tags = {
-    project = "terraform"
+    project = var.project
   }
 }
 
@@ -54,7 +54,7 @@ resource "aws_route_table" "vpc_rt" {
   }
 
   tags = {
-    project = "terraform"
+    project = var.project
   }
 
 }

@@ -19,6 +19,13 @@ resource "aws_security_group" "wsg" {
     cidr_blocks = [var.open_internet]
   }
 
+    ingress {
+    from_port  = 8080
+    to_port    = 8080
+    protocol   = "tcp"
+    cidr_blocks = [var.open_internet]
+  }
+
   ingress {
     from_port = 3306
     to_port = 3306
@@ -37,7 +44,7 @@ resource "aws_security_group" "wsg" {
 
 
   tags = {
-    project = "terraform"
+    project = "dev_ops_project"
   }
 
 }
