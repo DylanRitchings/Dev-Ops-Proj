@@ -10,7 +10,7 @@ resource "aws_vpc" "vpc" {
   }
 }
 
-resource "aws_subnet" "My_Subnet" {
+resource "aws_subnet" "subnet1" {
   cidr_block              = var.pub-snA-cidr-block
   availability_zone       = data.aws_availability_zones.available.names[0]
   vpc_id = aws_vpc.vpc.id
@@ -21,7 +21,7 @@ resource "aws_subnet" "My_Subnet" {
   }
 }
 
-resource "aws_subnet" "My_Subnet_2" {
+resource "aws_subnet" "subnet2" {
   cidr_block              = var.pub-snB-cidr-block
   availability_zone       = data.aws_availability_zones.available.names[1]
   vpc_id = aws_vpc.vpc.id
@@ -41,7 +41,7 @@ resource "aws_internet_gateway" "vpc_igw" {
   # }
 
   tags = {
-    project = var.project
+    project = "dev_ops_project"
   }
 }
 
@@ -54,17 +54,17 @@ resource "aws_route_table" "vpc_rt" {
   }
 
   tags = {
-    project = var.project
+    project = "dev_ops_project"
   }
 
 }
 
-resource "aws_route_table_association" "pub_subA_rta" {
-  subnet_id      = aws_subnet.My_Subnet.id
+resource "aws_route_table_association" "sub1_rta" {
+  subnet_id      = aws_subnet.subnet1.id
   route_table_id = aws_route_table.vpc_rt.id
 }
 
-resource "aws_route_table_association" "pub_subB_rta" {
-  subnet_id      = aws_subnet.My_Subnet_2.id
+resource "aws_route_table_association" "sub2_rta" {
+  subnet_id      = aws_subnet.subnet2.id
   route_table_id = aws_route_table.vpc_rt.id
 }
