@@ -1,5 +1,5 @@
 provider "aws" {
-  region                  = var.AWS_REGION
+  region                  = var.aws_region
   shared_credentials_file = "~/.aws/credentials"
 }
 module "aws_vpc" {
@@ -14,7 +14,8 @@ module "security_group" {
 
 module "ec2_instances" {
   source                 = "./EC2"
-  subnet_id              = module.aws_vpc.public_subnetA_id
+  pub_sub_id             = module.aws_vpc.pub_sub_id
+  not_priv_sub_id            = module.aws_vpc.not_priv_sub_id
   vpc_security_group_ids = [module.security_group.aws_wsg_id]
 }
 
@@ -22,8 +23,9 @@ module "RDS_instances" {
   username = "root"
   password = "password"
   source = "./RDS"
-  subnetA_id = module.aws_vpc.public_subnetA_id
-  subnetB_id = module.aws_vpc.public_subnetB_id
+  sub_id1 = module.aws_vpc.not_priv_rds_sub_id1
+  sub_id2 = module.aws_vpc.not_priv_rds_sub_id2
+//  subnetB_id = module.aws_vpc.public_subnetB_id
   vpc_security_group_ids = [module.security_group.aws_wsg_id]
 
 }

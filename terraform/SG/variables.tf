@@ -3,13 +3,21 @@ variable "outbound_port" {
   default     = 0
 }
 
-variable "open_internet" {
+variable "public_cidr" {
   default = "0.0.0.0/0"
 }
 
-variable "configure_VM_CIDR" {
-  default = "0.0.0.0/0" #needs to be range 32
+
+//TODO set to VPC CIDR?
+variable "not_private_cidr" {
+  default = "0.0.0.0/0" #needs to be range 32 (OR 16?)
 }
+
+//TODO change cidr to vpc?
+variable "not_rds_private_cidr" {
+  default = "0.0.0.0/0"
+}
+
 
 variable "vpc_id_SG" {
   default = "null"

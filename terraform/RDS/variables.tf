@@ -1,10 +1,15 @@
-variable "subnetA_id" {
+variable "sub_id1" {
     default = "null"
 }
 
-variable "subnetB_id"{
+variable "sub_id2" {
     default = "null"
 }
+
+
+//variable "subnetB_id"{
+//    default = "null"
+//}
 
 variable "vpc_security_group_ids" {
     default = "null"

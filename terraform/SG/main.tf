@@ -1,37 +1,37 @@
 data "aws_availability_zones" "available" {
   state = "available"
 }
-resource "aws_security_group" "wsg" {
-  name        = var.name
-  description = "Allow SSH"
+//TODO remove not needed ports?
+resource "aws_security_group" "pub_sg" {
+  name        = "Public SG"
+  description = "Allows multiple ports for public subnet"
   vpc_id = var.vpc_id_SG
+
+  //SSH
   ingress {
     from_port  = 22
     to_port    = 22
     protocol   = "tcp"
-    cidr_blocks = [var.open_internet]
+    cidr_blocks = [var.public_cidr]
   }
 
+  //HTTP
   ingress {
     from_port  = 80
     to_port    = 80
     protocol   = "tcp"
-    cidr_blocks = [var.open_internet]
+    cidr_blocks = [var.public_cidr]
   }
 
-    ingress {
+  //Jenkins
+  ingress {
     from_port  = 8080
     to_port    = 8080
     protocol   = "tcp"
-    cidr_blocks = [var.open_internet]
+    cidr_blocks = [var.public_cidr]
   }
 
-  ingress {
-    from_port = 3306
-    to_port = 3306
-    protocol = "tcp"
-    cidr_blocks = [var.configure_VM_CIDR]
-  }
+
 
 
   egress {
@@ -39,12 +39,46 @@ resource "aws_security_group" "wsg" {
 
     protocol   = -1
     to_port    = var.outbound_port
-    cidr_blocks = [var.open_internet]
+    cidr_blocks = [var.public_cidr]
   }
 
 
   tags = {
     project = "dev_ops_project"
   }
+}
 
+resource "aws_security_group" "not_priv_sg" {
+  name = "Test SG"
+  description = "Allow multiple ports to not private subnet"
+  vpc_id = var.vpc_id_SG
+
+  //Jenkins
+  ingress {
+    from_port  = 8080
+    to_port    = 8080
+    protocol   = "tcp"
+    cidr_blocks = [var.not_private_cidr]
+  }
+
+  //SSH
+  ingress {
+    from_port  = 22
+    to_port    = 22
+    protocol   = "tcp"
+    cidr_blocks = [var.not_private_cidr]
+  }
+}
+
+resource "aws_security_group" "not_priv_rds_sg" {
+  name = "RDS SG"
+  description = "Allow MySQL port"
+  vpc_id = var.vpc_id_SG
+  //SQL
+  ingress {
+    from_port = 3306
+    to_port = 3306
+    protocol = "tcp"
+    cidr_blocks = [var.not_private_cidr]
+  }
 }
