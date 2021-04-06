@@ -6,6 +6,7 @@ resource "aws_vpc" "vpc" {
   cidr_block       = var.vpc_cidr
   instance_tenancy = "default"
   tags = {
+    Name = "project_vpc"
     project = "dev_ops_project"
   }
 }
@@ -17,6 +18,7 @@ resource "aws_subnet" "pub_sub" {
   map_public_ip_on_launch = true
 
   tags = {
+    Name = "public"
     project = "dev_ops_project"
   }
 }
@@ -28,6 +30,7 @@ resource "aws_subnet" "not_priv_sub" {
   map_public_ip_on_launch = true //false in production
 
   tags = {
+    Name = "not_private"
     project = "dev_ops_project"
   }
 }
@@ -39,6 +42,7 @@ resource "aws_subnet" "not_priv_rds_sub1" {
   map_public_ip_on_launch = true //false in production
 
   tags = {
+    Name = "rds_not_private1"
     project = "dev_ops_project"
   }
 }
@@ -50,6 +54,7 @@ resource "aws_subnet" "not_priv_rds_sub2" {
   map_public_ip_on_launch = true //false in production
 
   tags = {
+    Name = "rds_not_private2"
     project = "dev_ops_project"
   }
 }

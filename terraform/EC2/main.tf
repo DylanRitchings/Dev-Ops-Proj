@@ -6,7 +6,8 @@ resource "aws_instance" "build_vm" {
   instance_type          = var.instance_type
   key_name               = var.key
 //  vpc_security_group_ids = var.vpc_security_group_ids
-
+  subnet_id              = var.pub_sub_id
+  vpc_security_group_ids = var.vpc_security_group_ids
 
 
   tags = {

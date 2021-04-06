@@ -16,10 +16,12 @@ module "ec2_instances" {
   source                 = "./EC2"
   pub_sub_id             = module.aws_vpc.pub_sub_id
   not_priv_sub_id            = module.aws_vpc.not_priv_sub_id
+  //TODO FIX
   vpc_security_group_ids = [module.security_group.aws_wsg_id]
 }
 
 module "RDS_instances" {
+  //TODO put in separate file
   username = "root"
   password = "password"
   source = "./RDS"
