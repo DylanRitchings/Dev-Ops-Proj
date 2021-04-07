@@ -5,7 +5,7 @@ cd ../terraform
 
 terraform init
 terraform plan
-terraform apply -y
+terraform apply
 
 terraform output -raw build_ip > ../files/build_ip
 terraform output -raw test_ip > ../files/test_ip
