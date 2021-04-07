@@ -65,11 +65,6 @@ resource "aws_subnet" "not_priv_rds_sub2" {
 resource "aws_internet_gateway" "vpc_igw" {
   vpc_id = aws_vpc.vpc.id
 
-  # route {
-  #   cidr_blocks = "0.0.0.0/0"
-  #   gateway_id = aws_internet_gateway.vpc_igw.id
-  # }
-
   tags = {
     project = "dev_ops_project"
   }
@@ -93,8 +88,3 @@ resource "aws_route_table_association" "pub_rta" {
   subnet_id      = aws_subnet.pub_sub.id
   route_table_id = aws_route_table.vpc_rt.id
 }
-
-//resource "aws_route_table_association" "sub2_rta" {
-//  subnet_id      = aws_subnet.priv_sub.id
-//  route_table_id = aws_route_table.vpc_rt.id
-//}

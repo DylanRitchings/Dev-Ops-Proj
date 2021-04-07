@@ -4,3 +4,4 @@
 /terraform/terraform.tfstate.backup
 /files/vmkey.pem
 
+/terraform/.terraform.tfstate.lock.info

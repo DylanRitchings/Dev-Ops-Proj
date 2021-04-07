@@ -5,3 +5,4 @@ output "test_rds_endpoint" {
 output "prod_rds_endpoint" {
     value = aws_db_instance.prod_db.endpoint
 }
+
