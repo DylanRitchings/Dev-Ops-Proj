@@ -6,3 +6,5 @@ set -e
 . ansible.sh
 
 . configure-aws.sh
+
+. jenkins.sh

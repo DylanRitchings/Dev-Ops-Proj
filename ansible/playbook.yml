@@ -29,3 +29,6 @@
       script: scripts/install_mysql.sh
     - name: install pytest
       script: scripts/install_pytest.sh
+    - name: install git
+      script: scripts/install_git.sh
+
