@@ -18,6 +18,8 @@
       script: scripts/install_pytest.sh
     - name: install jenkins
       script: scripts/install_jenkins.sh
+    - name: install nginx
+      script: scripts/install_nginx.sh
 - hosts: test
   become: true
   tasks:
