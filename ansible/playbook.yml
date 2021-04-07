@@ -1,0 +1,34 @@
+---
+- hosts: build
+  become: true
+  tasks:
+    - name: startup
+      script: scripts/startup.sh
+    - name: install git
+      script: scripts/install_git.sh
+    - name: install awscli
+      script: scripts/install_awscli.sh
+    - name: install mysql
+      script: scripts/install_mysql.sh
+    - name: install docker
+      script: scripts/install_docker.sh
+    - name: install kubectl
+      script: scripts/install_kubectl.sh
+    - name: install pytest
+      script: scripts/install_pytest.sh
+    - name: install jenkins
+      script: scripts/install_jenkins.sh
+    - name: install nginx
+      script: scripts/install_nginx.sh
+- hosts: test
+  become: true
+  tasks:
+    - name: startup
+      script: scripts/startup.sh
+    - name: install mysql
+      script: scripts/install_mysql.sh
+    - name: install pytest
+      script: scripts/install_pytest.sh
+    - name: install git
+      script: scripts/install_git.sh
+

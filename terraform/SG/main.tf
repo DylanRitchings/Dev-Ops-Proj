@@ -53,19 +53,33 @@ resource "aws_security_group" "not_priv_sg" {
   description = "Allow multiple ports to not private subnet"
   vpc_id = var.vpc_id_SG
 
-  //Jenkins
-  ingress {
-    from_port  = 8080
-    to_port    = 8080
-    protocol   = "tcp"
-    cidr_blocks = [var.not_private_cidr]
-  }
+//  //Jenkins
+//  ingress {
+//    from_port  = 8080
+//    to_port    = 8080
+//    protocol   = "tcp"
+//    cidr_blocks = [var.not_private_cidr]
+//  }
 
   //SSH
   ingress {
     from_port  = 22
     to_port    = 22
     protocol   = "tcp"
+    cidr_blocks = [var.not_private_cidr]
+  }
+//  //HTTP
+//  ingress {
+//    from_port  = 80
+//    to_port    = 80
+//    protocol   = "tcp"
+//    cidr_blocks = [var.public_cidr]
+//  }
+    //SQL
+  ingress {
+    from_port = 3306
+    to_port = 3306
+    protocol = "tcp"
     cidr_blocks = [var.not_private_cidr]
   }
 
@@ -82,11 +96,5 @@ resource "aws_security_group" "not_priv_rds_sg" {
   name = "RDS SG"
   description = "Allow MySQL port"
   vpc_id = var.vpc_id_SG
-  //SQL
-  ingress {
-    from_port = 3306
-    to_port = 3306
-    protocol = "tcp"
-    cidr_blocks = [var.not_private_cidr]
-  }
+
 }
