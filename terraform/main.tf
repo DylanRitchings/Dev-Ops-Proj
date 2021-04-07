@@ -17,7 +17,7 @@ module "ec2_instances" {
   pub_sub_id             = module.aws_vpc.pub_sub_id
   not_priv_sub_id            = module.aws_vpc.not_priv_sub_id
   //TODO FIX
-  vpc_security_group_ids = [module.security_group.aws_wsg_id]
+  vpc_security_group_ids = [[module.security_group.pub_sg_id],[module.security_group.not_priv_sg_id]]
 }
 
 module "RDS_instances" {
@@ -28,6 +28,6 @@ module "RDS_instances" {
   sub_id1 = module.aws_vpc.not_priv_rds_sub_id1
   sub_id2 = module.aws_vpc.not_priv_rds_sub_id2
 //  subnetB_id = module.aws_vpc.public_subnetB_id
-  vpc_security_group_ids = [module.security_group.aws_wsg_id]
+  vpc_security_group_ids = [module.security_group.not_priv_rds_sg_id]
 
 }

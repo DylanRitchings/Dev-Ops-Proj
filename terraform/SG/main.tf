@@ -68,6 +68,14 @@ resource "aws_security_group" "not_priv_sg" {
     protocol   = "tcp"
     cidr_blocks = [var.not_private_cidr]
   }
+
+    egress {
+    from_port = var.outbound_port
+
+    protocol   = -1
+    to_port    = var.outbound_port
+    cidr_blocks = [var.public_cidr]
+  }
 }
 
 resource "aws_security_group" "not_priv_rds_sg" {
