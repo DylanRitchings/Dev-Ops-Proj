@@ -20,22 +20,28 @@
 ```bash
 # clone repo
 cd Dev-Ops-Proj/main
+
 # Install required packages using:
 . setup_vm.sh
+# Make sure everything installs properly
+
 # Configure AWS using:
 aws configure
-# Make sure everything installs properly
+
 # Create a private key on AWS called vmkey.pem
 # Put vmkey.pem in 'Dev-Ops-Proj/files/vmkey.pem'
 cd Dev-Ops-Proj/main
+
 # Run terraform and ansible using:
 . run.sh
 # Click yes when needed
 # Wait until it automatically SSHs into build VM
+
 # In build VM configure AWS using:
 aws configure
 # Exit after config:
 exit
+
 # On browser go to build VM ip on port 8080
 # Start configuring jenkins
 ```
