@@ -9,9 +9,11 @@ unzip terraform*.zip
 sudo mv terraform /usr/local/bin
 terraform version
 rm terraform*.zip
+
 #Install ansible
 sudo apt-add-repository --yes --update ppa:ansible/ansible
+sudo apt install ansible
 
-echo "Create files/vmkey.pem after aws configure"
+echo "Create 'files/vmkey.pem' after aws configure"
 
 aws configure
