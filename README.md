@@ -39,6 +39,9 @@ cd Dev-Ops-Proj/main
 
 # In build VM configure AWS using:
 aws configure
+
+# Put vmkey.pem in jenkins
+
 # Exit after config:
 exit
 
