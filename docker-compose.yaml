@@ -1,0 +1,23 @@
+version: "3.8"
+services:
+  backend:
+    container_name: backend
+    build: ./flask-app/backend
+    image: ./flask-app/backend
+    ports:
+    - target: 5001
+      published: 5001
+      protocol: tcp
+    environment:
+      DATABASE_URI: ${DATABASE_URI}
+      TEST_DATABASE_URI: ${TEST_DATABASE_URI}
+      SECRET_KEY: ${DATABASE_SECRET_KEY}
+
+  frontend:
+    container_name: frontend
+    build: ./flask-app/backend
+    image: ./flask-app/frontend
+    ports:
+    - target: 5000
+      published: 5000
+      protocol: tcp

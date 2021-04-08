@@ -1,11 +1,40 @@
 pipeline {
   agent any
   environment{
-      DB_URI=credentials('DATABASE_URI')
-      TEST_DB_URI=credentials('TEST_DATABASE_URI')
+      DATABASE_URI='prod.cyjzk1rwhp13.eu-west-2.rds.amazonaws.com:3306'
+      TEST_DATABASE_URI='test.cyjzk1rwhp13.eu-west-2.rds.amazonaws.com:3306'
       DOCKER_USER=credentials('DOCKER_USER')
       DOCKER_PASSWORD=credentials('DOCKER_PASSWORD')
       VM_KEY=credentials('VM_KEY')
       AWS_ACCESS_KEY=credentials('AWS_ACCESS_KEY')
       AWS_SECRET_KEY=credentials('AWS_SECRET_KEY')
+      DATABASE_SECRET_KEY='jksdfl9weir90238908f09sdf8hfds'
+      DATABASE_USER=credentials('DATABASE_USER')
+      DATABASE_PASSWORD=credentials('DATABASE_PASSWORD')
+  }
+
+  stages {
+//      stage("Upload to dockerhub") {
+//
+//      }
+     stage("Install project on test vm"){
+        sh "jenkins_scripts/install_test_vm.sh"
+     }
+     stage("Configure test RDS"){
+//         use secret key
+     }
+     stage("Run tests"){
+
+     }
+     stage("Login to dockerhub"){
+
+     }
+     stage("Upload to dockerhub"){
+
+     }
+
+     stage("Deploy with kubernetes"){
+
+     }
+  }
   }

@@ -5,3 +5,4 @@
 /files/vmkey.pem
 
 /terraform/.terraform.tfstate.lock.info
+/files/install_app.sh

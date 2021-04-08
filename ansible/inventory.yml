@@ -1,13 +1,13 @@
 test:
   hosts:
-    3.8.118.74
+    3.8.115.90
   vars:
     ansible_user: ubuntu
     ansible_ssh_private_key_file: '../files/vmkey.pem'
 
 build:
   hosts:
-    18.132.1.91
+    18.135.28.16
   vars:
     ansible_user: ubuntu
     ansible_ssh_private_key_file: '../files/vmkey.pem'

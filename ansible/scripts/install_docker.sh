@@ -1,8 +1,4 @@
 #!/bin/bash
-#sudo apt install docker.io -y
-#systemctl start docker
-#systemctl enable docker
-#docker --version
 curl https://get.docker.com | sudo bash
 
 sudo usermod -aG docker "$(whoami)"

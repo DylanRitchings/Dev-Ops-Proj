@@ -18,8 +18,6 @@
       script: scripts/install_pytest.sh
     - name: install jenkins
       script: scripts/install_jenkins.sh
-    - name: install nginx
-      script: scripts/install_nginx.sh
 - hosts: test
   become: true
   tasks:
@@ -31,4 +29,5 @@
       script: scripts/install_pytest.sh
     - name: install git
       script: scripts/install_git.sh
-
+    - name: install docker
+      script: scripts/install_docker.sh
