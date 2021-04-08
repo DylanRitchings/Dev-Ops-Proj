@@ -20,6 +20,10 @@ services:
       protocol: tcp
     depends_on:
       - "database"
+    environment:
+      DATABASE_URI: ${DATABASE_URI}
+      TEST_DATABASE_URI: ${TEST_DATABASE_URI}
+      SECRET_KEY: ${SECRET_KEY}
   database:
     container_name: database
     build: ./database
