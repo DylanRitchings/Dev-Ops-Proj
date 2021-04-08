@@ -1,7 +1,7 @@
 #!/bin/bash
 build_ip="ubuntu@$(cat files/build_ip)"
-echo "$build_ip"
-pwd
+#echo "$build_ip"
+#pwd
 #cd .ssh
 chmod 400 ~/.ssh/vmkey.pem
 ssh -i ~/.ssh/vmkey.pem "$build_ip" << EOF
