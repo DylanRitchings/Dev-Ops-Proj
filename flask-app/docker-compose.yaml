@@ -1,5 +1,14 @@
 version: "3.8"
 services:
+  frontend:
+    container_name: frontend
+    build: ./frontend
+    image: frontend
+    ports:
+      - target: 5000
+        published: 5000
+        protocol: tcp
+
   backend:
     container_name: backend
     build: ./backend
@@ -13,11 +22,3 @@ services:
       TEST_DATABASE_URI: ${TEST_DATABASE_URI}
       SECRET_KEY: ${DATABASE_SECRET_KEY}
 
-  frontend:
-    container_name: frontend
-    build: ./frontend
-    image: frontend
-    ports:
-    - target: 5000
-      published: 5000
-      protocol: tcp
