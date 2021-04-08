@@ -18,7 +18,7 @@ ssh -i ~/.ssh/vmkey.pem "$test_ip" << 'EOF'
 
     #dockerhub upload
     sudo chmod 666 /var/run/docker.sock
-    sudo docker login --username="${DOCKER_USER}" --password="${DOCKER_PASSWORD}"
+#    sudo docker login --username="${DOCKER_USER}" --password="${DOCKER_PASSWORD}"
 
     cd backend
     docker run -d -p 5001:5001 --name backend backend:latest
