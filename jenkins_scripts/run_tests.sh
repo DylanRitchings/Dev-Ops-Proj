@@ -1,6 +1,6 @@
 #!/bin/bash
 build_ip=$(cat files/build_ip)
-sudo ssh -i /home/jenkins/.ssh/vmkey.pem ubuntu@"${build_ip}" << EOF
+ssh -i /home/jenkins/.ssh/vmkey.pem ubuntu@"${build_ip}" << EOF
     ls
     sudo rm -r Dev-Ops-Proj
     git clone https://github.com/DylanRitchings/Dev-Ops-Proj.git
