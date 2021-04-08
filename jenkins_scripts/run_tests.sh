@@ -17,7 +17,6 @@ ssh -i ~/.ssh/vmkey.pem "$test_ip" << EOF
     DATABASE_SECRET_KEY='jksdfl9weir90238908f09sdf8hfds'
 
     cd flask-app
-    pwd
     sudo docker-compose up -d
 #    sudo docker exec backend bash -c "pytest tests/ --cov application"
 #    sudo docker exec frontend bash -c "pytest tests/ --cov application"
