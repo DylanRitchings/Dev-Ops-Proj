@@ -3,7 +3,7 @@ services:
   backend:
     container_name: backend
     build: ./backend
-    image: ./backend
+    image: backend
     ports:
     - target: 5001
       published: 5001
@@ -15,8 +15,8 @@ services:
 
   frontend:
     container_name: frontend
-    build: ./backend
-    image: ./frontend
+    build: ./frontent
+    image: frontend
     ports:
     - target: 5000
       published: 5000
