@@ -16,7 +16,7 @@ ssh -i ~/.ssh/vmkey.pem "$test_ip" << 'EOF'
     docker exec frontend bash -c "pytest tests/ --cov application"
 
     #dockerhub upload
-    docker-compose build backend -t dylanrit/backend
+    docker build backend -t dylanrit/backend
     docker push dylanrit/backend
 
     docker build frontend -t dylanrit/frontend
