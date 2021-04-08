@@ -17,9 +17,9 @@ ssh -i ~/.ssh/vmkey.pem "$test_ip" << 'EOF'
 
     #dockerhub upload
 
-    cd backend/
-    sudo docker build -t dylanrit/backend:latest .
-    sudo docker push dylanrit/backend:latest
+#    cd backend/
+#    sudo docker build -t dylanrit/backend:latest .
+#    sudo docker push dylanrit/backend:latest
 
 #    sudo chmod 666 /var/run/docker.sock
 ##    sudo docker login --username="${DOCKER_USER}" --password="${DOCKER_PASSWORD}"
