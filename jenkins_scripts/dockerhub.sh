@@ -1,4 +1,5 @@
 sudo docker login --username="${DOCKER_USER}" --password="${DOCKER_PASSWORD}"
+rm -r Dev-Ops-Proj
 git clone https://github.com/DylanRitchings/Dev-Ops-Proj.git
 
 cd Dev-Ops-Proj/flask-app/backend
