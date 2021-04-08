@@ -1,8 +1,8 @@
 pipeline {
   agent any
   environment{
-      DATABASE_URI='prod.cyjzk1rwhp13.eu-west-2.rds.amazonaws.com:3306'
-      TEST_DATABASE_URI='test.cyjzk1rwhp13.eu-west-2.rds.amazonaws.com:3306'
+      DATABASE_URI='mysql+pymysql://root:password@prod.cyjzk1rwhp13.eu-west-2.rds.amazonaws.com:3306/testdb'
+      TEST_DATABASE_URI='mysql+pymysql://root:password@test.cyjzk1rwhp13.eu-west-2.rds.amazonaws.com:3306/testdb'
       DOCKER_USER=credentials('DOCKER_USER')
       DOCKER_PASSWORD=credentials('DOCKER_PASSWORD')
       VM_KEY=credentials('VM_KEY')
