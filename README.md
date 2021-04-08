@@ -37,12 +37,15 @@ cd Dev-Ops-Proj/main
 # Click yes when needed
 # Wait until it automatically SSHs into build VM
 
-# In build VM configure AWS using:
-aws configure
+
+
+# Create jenkins user
+# Give sudo access to jenkins user using:
+sudo visudo
+
+# Become jenkins user with:
 
 # Put vmkey.pem in .ssh
-# Create jenkins user
-# Give sudo access to jenkins user:
 
 # AWS configure on jenkins user
 
