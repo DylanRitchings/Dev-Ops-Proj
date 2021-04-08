@@ -14,10 +14,10 @@ ssh -i ~/.ssh/vmkey.pem "$test_ip" << EOF
 
     DATABASE_URI="$(cat files/prod_rds_endpoint)"
     TEST_DATABASE_URI="$(cat files/test_rds_endpoint)"
-    DATABASE_SECRET_KEY='jksdfl9weir90238908f09sdf8hfds'
+    DATABASE_SECRET_KEY="jksdfl9weir90238908f09sdf8hfds"
 
     cd flask-app
     sudo docker-compose up -d
-    sudo docker exec backend bash -c "pytest tests/ --cov application"
-    sudo docker exec frontend bash -c "pytest tests/ --cov application"
+#    sudo docker exec backend bash -c "pytest tests/ --cov application"
+#    sudo docker exec frontend bash -c "pytest tests/ --cov application"
 EOF
