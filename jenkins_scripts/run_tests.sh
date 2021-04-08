@@ -1,7 +1,5 @@
 #!/bin/bash
-pwd
-ls
-build_ip=$(cat ../files/build_ip)
+build_ip=$(cat files/build_ip)
 sudo ssh -i /home/jenkins/.ssh/vmkey.pem ubuntu@"${build_ip}" << EOF
 
     sudo rm -r Dev-Ops-Proj
