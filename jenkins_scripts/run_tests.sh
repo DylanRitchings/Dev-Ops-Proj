@@ -11,8 +11,9 @@ ssh -i ~/.ssh/vmkey.pem "$test_ip" << EOF
     cd flask-app
     mysql -u root --password=password -h test.cyjzk1rwhp13.eu-west-2.rds.amazonaws.com < ~/Dev-Ops-Proj/flask-app/database/Create.sql
 
-    sudo docker-compose up -d
-    sudo docker-compose exec backend bash -c "pytest --cov application"
-    sudo docker-compose exec frontend bash -c "pytest --cov application"
-#    sudo docker-compose down
+    docker-compose up -d
+    docker exec backend bash -c "pytest tests/ --cov application"
+    docker exec backend bash -c "pytest tests/ --cov application"
+    docker-compose down
+
 EOF
