@@ -1,8 +1,9 @@
 #!/bin/bash
 build_ip="ubuntu@$(cat files/build_ip)"
 echo "$build_ip"
-cd .ssh
-ssh -tt cd .ssh/vmkey.pem "$build_ip" << EOF
+#cd .ssh
+chmod 400 .ssh/vmkey.pem
+ssh -i .ssh/vmkey.pem "$build_ip" << EOF
     ls
     sudo rm -r Dev-Ops-Proj
     git clone https://github.com/DylanRitchings/Dev-Ops-Proj.git
