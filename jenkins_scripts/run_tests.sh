@@ -1,5 +1,6 @@
 #!/bin/bash
 build_ip="ubuntu@$(cat files/build_ip)"
+echo "$build_ip"
 pwd
 ssh -tt cd .ssh/vmkey.pem "$build_ip" << EOF
     ls
