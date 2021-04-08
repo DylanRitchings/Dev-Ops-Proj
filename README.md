@@ -40,13 +40,19 @@ cd Dev-Ops-Proj/main
 # In build VM configure AWS using:
 aws configure
 
-# Put vmkey.pem in jenkins
+# Put vmkey.pem in .ssh
+# Create jenkins user
+# Give sudo access to jenkins user:
+
+# AWS configure on jenkins user
 
 # Exit after config:
 exit
 
 # On browser go to build VM ip on port 8080
+
 # Start configuring jenkins
+# 
 ```
 
 
