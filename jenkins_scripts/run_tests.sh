@@ -1,7 +1,8 @@
 #!/bin/bash
 test_ip="ubuntu@$(cat files/test_ip)"
 chmod 400 ~/.ssh/vmkey.pem
-ssh -i ~/.ssh/vmkey.pem "$test_ip" << EOF
+ssh -i ~/.ssh/vmkey.pem "$test_ip" << 'EOF'
+
     ls
     sudo rm -r Dev-Ops-Proj
     git clone https://github.com/DylanRitchings/Dev-Ops-Proj.git
@@ -20,9 +21,10 @@ ssh -i ~/.ssh/vmkey.pem "$test_ip" << EOF
     sudo docker login --username="${DOCKER_USER}" --password="${DOCKER_PASSWORD}"
 
     cd backend
-    docker run -d -p 5001:5001 --name backend backend
-    docker build -t dylanrit/backend
-    sudo docker push dylanrit/backend
+    docker run -d -p 5001:5001 --name backend backend:latest
+    docker build -t dylanrit/backend:latest
+    sudo docker push dylanrit/backend:latest
 
     docker-compose down
+
 EOF
