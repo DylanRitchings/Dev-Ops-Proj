@@ -2,7 +2,7 @@ version: "3.8"
 services:
   backend:
     container_name: backend
-    build: ./flask-app/backend
+    build: ./backend
     image: ./flask-app/backend
     ports:
     - target: 5001
@@ -15,7 +15,7 @@ services:
 
   frontend:
     container_name: frontend
-    build: ./flask-app/backend
+    build: ./backend
     image: ./flask-app/frontend
     ports:
     - target: 5000
