@@ -14,7 +14,7 @@ pipeline {
   }
 
   stages {
-     stage("Create images and run test"){
+     stage("Create and run test images"){
         steps {
             sh "jenkins_scripts/install_test_vm.sh"
         }

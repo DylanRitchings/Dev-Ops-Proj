@@ -20,7 +20,6 @@ module "ec2_instances" {
 }
 
 module "rds_instances" {
-  //TODO put in separate file
   username = "root"
   password = "password"
   source = "./RDS"
