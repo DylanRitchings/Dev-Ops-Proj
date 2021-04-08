@@ -15,12 +15,4 @@ docker push dylanrit/backend
 docker build frontend -t dylanrit/frontend
 docker push dylanrit/frontend
 
-#docker build -t dylanrit/backend
-#sudo docker push dylanrit/backend
-
-
-#
-#cd ../frontend
-#docker build -t dylanrit/frontend
-#sudo docker push dylanrit/frontend
 docker-compose down
