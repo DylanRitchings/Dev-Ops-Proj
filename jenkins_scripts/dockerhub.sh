@@ -23,3 +23,4 @@ docker push dylanrit/frontend
 #cd ../frontend
 #docker build -t dylanrit/frontend
 #sudo docker push dylanrit/frontend
+docker-compose down

@@ -1,4 +1,5 @@
 FROM python:3.8
+WORKDIR /home/
 #RUN cd home
 RUN ls
 RUN ${whoami}
