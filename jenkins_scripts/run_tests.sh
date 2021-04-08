@@ -1,8 +1,5 @@
 #!/bin/bash
 test_ip="ubuntu@$(cat files/test_ip)"
-#echo "$build_ip"
-#pwd
-#cd .ssh
 chmod 400 ~/.ssh/vmkey.pem
 ssh -i ~/.ssh/vmkey.pem "$test_ip" << EOF
     ls
@@ -11,11 +8,6 @@ ssh -i ~/.ssh/vmkey.pem "$test_ip" << EOF
     cd Dev-Ops-Proj
 
     git checkout jenkins
-
-#    DATABASE_URI="$(cat files/prod_rds_endpoint)"
-
-    echo ${TEST_DATABASE_URI}
-    DATABASE_SECRET_KEY="jksdfl9weir90238908f09sdf8hfds"
 
     cd flask-app
     sudo docker-compose up -d
