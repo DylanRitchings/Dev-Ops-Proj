@@ -9,8 +9,7 @@ ssh -i ~/.ssh/vmkey.pem "$test_ip" << EOF
 
     git checkout jenkins
     cd flask-app
-    db_password=password
-    mysql -u root -p=${db_password} -h test.cyjzk1rwhp13.eu-west-2.rds.amazonaws.com < ~/Dev-Ops-Proj/flask-app/database/Create.sql
+    mysql -u root --password=password -h test.cyjzk1rwhp13.eu-west-2.rds.amazonaws.com < ~/Dev-Ops-Proj/flask-app/database/Create.sql
 
     sudo docker-compose up -d
     sudo docker exec backend bash -c "pytest tests/ --cov application"
