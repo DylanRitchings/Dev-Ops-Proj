@@ -17,13 +17,13 @@ ssh -i ~/.ssh/vmkey.pem "$test_ip" << 'EOF'
     docker exec frontend bash -c "pytest tests/ --cov application"
 
     #dockerhub upload
-    sudo chmod 666 /var/run/docker.sock
-#    sudo docker login --username="${DOCKER_USER}" --password="${DOCKER_PASSWORD}"
-
-    cd backend
-    docker run -d -p 5001:5001 --name backend backend:latest
-    docker build -t dylanrit/backend:latest
-    sudo docker push dylanrit/backend:latest
+#    sudo chmod 666 /var/run/docker.sock
+##    sudo docker login --username="${DOCKER_USER}" --password="${DOCKER_PASSWORD}"
+#
+#    cd backend
+#    docker run -d -p 5001:5001 --name backend backend:latest
+#    docker build -t dylanrit/backend:latest
+#    sudo docker push dylanrit/backend:latest
 
     docker-compose down
 
