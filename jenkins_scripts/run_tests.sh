@@ -14,5 +14,15 @@ ssh -i ~/.ssh/vmkey.pem "$test_ip" << EOF
     docker-compose up -d
     docker exec backend bash -c "pytest tests/ --cov application"
     docker exec frontend bash -c "pytest tests/ --cov application"
+
+    #dockerhub upload
+    sudo chmod 666 /var/run/docker.sock
+    sudo docker login --username="${DOCKER_USER}" --password="${DOCKER_PASSWORD}"
+
+    cd backend
+    docker run -d -p 5001:5001 --name backend backend
+    docker build -t dylanrit/backend
+    sudo docker push dylanrit/backend
+
     docker-compose down
 EOF

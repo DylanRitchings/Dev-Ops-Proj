@@ -6,6 +6,9 @@ git clone https://github.com/DylanRitchings/Dev-Ops-Proj.git
 cd Dev-Ops-Proj
 git checkout jenkins
 cd flask-app/backend
+
+docker-compose up -d
+docker run -d -p 5001:5001 --name backend backend
 docker build -t dylanrit/backend
 sudo docker push dylanrit/backend
 
