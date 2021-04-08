@@ -18,6 +18,7 @@ pipeline {
 //      }
      stage("Create and run test images"){
         steps {
+            sh "chmod a+x jenkins_scripts/run_tests.sh"
             sh "jenkins_scripts/run_tests.sh"
         }
      }
