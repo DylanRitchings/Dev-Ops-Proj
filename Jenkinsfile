@@ -26,6 +26,7 @@ pipeline {
 
      stage("Upload to dockerhub"){
          steps {
+            sh "chmod a+x jenkins_scripts/dockerhub.sh"
             sh "jenkins_scripts/dockerhub.sh"
             }
      }
