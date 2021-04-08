@@ -14,35 +14,31 @@ pipeline {
   }
 
   stages {
-//      stage("Upload to dockerhub") {
-//
-//      }
-     stage("Install project on test vm"){
+     stage("Create images and run test"){
         steps {
-        sh "jenkins_scripts/install_test_vm.sh"
+            sh "jenkins_scripts/install_test_vm.sh"
         }
      }
 
-     stage("Configure test RDS"){
-         steps {
-            }
-     }
-     stage("Run tests"){
-         steps {
-            }
-     }
-     stage("Login to dockerhub"){
-         steps {
-            }
-     }
-     stage("Upload to dockerhub"){
-         steps {
-            }
-     }
 
-     stage("Deploy with kubernetes"){
-         steps {
-            }
-     }
+//
+//      stage("Configure test RDS"){
+//          steps {
+//             }
+//      }
+//      stage("Run tests"){
+//          steps {
+//             }
+//      }
+//      stage("Upload to dockerhub"){
+//          steps {
+//             }
+//      }
+//
+//      stage("Deploy with kubernetes"){
+//          steps {
+//             }
+//      }
+//   }
   }
-  }
+}
