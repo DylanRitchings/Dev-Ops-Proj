@@ -1,5 +1,5 @@
 FROM python:3.8
-RUN cd /home/root/
+RUN cd /home/usr/
 RUN ls
 #RUN pip3 install -r /home/$(whoami)/Dev-Ops-Proj/flask-app/backend/requirements.txt
 RUN pip3 install -r ~/Dev-Ops-Proj/flask-app/backend/requirements.txt
