@@ -96,5 +96,17 @@ resource "aws_security_group" "not_priv_rds_sg" {
   name = "RDS SG"
   description = "Allow MySQL port"
   vpc_id = var.vpc_id_SG
+  ingress {
+    from_port = 3306
+    to_port = 3306
+    protocol = "tcp"
+    cidr_blocks = [var.not_private_cidr]
+  }
+      egress {
+    from_port = var.outbound_port
 
+    protocol   = -1
+    to_port    = var.outbound_port
+    cidr_blocks = [var.public_cidr]
+  }
 }
