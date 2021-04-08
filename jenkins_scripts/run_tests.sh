@@ -18,6 +18,6 @@ ssh -i ~/.ssh/vmkey.pem "$test_ip" << EOF
 
     cd flask-app
     sudo docker-compose up -d
-    sudo docker exec backend bash -c "pytest tests/ --cov application"
-    sudo docker exec frontend bash -c "pytest tests/ --cov application"
+#    sudo docker exec backend bash -c "pytest tests/ --cov application"
+#    sudo docker exec frontend bash -c "pytest tests/ --cov application"
 EOF
