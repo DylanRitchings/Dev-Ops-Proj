@@ -14,5 +14,5 @@ ssh -i ~/.ssh/vmkey.pem "$test_ip" << EOF
     sudo docker-compose up -d
     sudo docker exec backend bash -c "pytest --cov application"
     sudo docker exec frontend bash -c "pytest --cov application"
-    docker-compose down
+#    docker-compose down
 EOF
