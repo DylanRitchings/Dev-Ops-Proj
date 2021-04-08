@@ -3,8 +3,8 @@ build_ip="ubuntu@$(cat files/build_ip)"
 echo "$build_ip"
 pwd
 #cd .ssh
-chmod 400 .ssh/vmkey.pem
-ssh -i .ssh/vmkey.pem "$build_ip" << EOF
+chmod 400 ~/var/lib/jenkins/.ssh/vmkey.pem
+ssh -i ~/var/lib/jenkins/.ssh/vmkey.pem "$build_ip" << EOF
     ls
     sudo rm -r Dev-Ops-Proj
     git clone https://github.com/DylanRitchings/Dev-Ops-Proj.git
