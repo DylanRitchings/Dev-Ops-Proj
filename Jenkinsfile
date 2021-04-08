@@ -14,8 +14,8 @@ pipeline {
   }
 
   stages {
-     stage("Setup database"){
-     }
+//      stage("Setup database"){
+//      }
      stage("Create and run test images"){
         steps {
             sh "jenkins_scripts/run_tests.sh"
