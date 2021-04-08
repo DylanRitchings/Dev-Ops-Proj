@@ -44,8 +44,10 @@ cd Dev-Ops-Proj/main
 sudo visudo
 
 # Become jenkins user with:
-
-# Put vmkey.pem in .ssh
+su - jenkins
+# Put vmkey.pem in /home/jenkins/.ssh/.ssh
+#then:
+sudo chmod 400 vmkey.pem 
 
 # AWS configure on jenkins user
 
