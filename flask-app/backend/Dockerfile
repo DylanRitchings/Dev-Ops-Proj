@@ -2,7 +2,7 @@ FROM python:3.8
 #RUN cd home
 RUN ls root
 WORKDIR /home/${whoami}
-pwd
+RUN pwd
 RUN ls
 #RUN pip3 install -r /home/$(whoami)/Dev-Ops-Proj/flask-app/backend/requirements.txt
 RUN pip3 install -r ~/Dev-Ops-Proj/flask-app/backend/requirements.txt
