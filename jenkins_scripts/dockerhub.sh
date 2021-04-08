@@ -7,11 +7,10 @@ cd Dev-Ops-Proj
 git checkout jenkins
 cd flask-app
 
-docker-compose up -d
+sudo docker-compose up -d
 #docker run -d -p 5001:5001 --name backend backend:latest
 sudo docker build backend -t dylanrit/backend
 sudo docker push dylanrit/backend
-
 
 sudo docker build frontend -t dylanrit/frontend
 sudo docker push dylanrit/frontend
@@ -20,7 +19,7 @@ sudo docker push dylanrit/frontend
 #sudo docker push dylanrit/backend
 
 
-
-cd ../frontend
-docker build -t dylanrit/frontend
-sudo docker push dylanrit/frontend
+#
+#cd ../frontend
+#docker build -t dylanrit/frontend
+#sudo docker push dylanrit/frontend
