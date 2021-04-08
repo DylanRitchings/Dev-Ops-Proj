@@ -24,11 +24,11 @@ services:
       DATABASE_URI: ${DATABASE_URI}
       TEST_DATABASE_URI: ${TEST_DATABASE_URI}
       SECRET_KEY: ${SECRET_KEY}
-#  database:
-#    container_name: database
-#    build: ./database
-#    image: mysql:latest
-#    ports:
-#      - target: 3306
-#        published: 3306
-#        protocol: tcp
+  database:
+    container_name: database
+    build: ./database
+    image: mysql:latest
+    ports:
+      - target: 3306
+        published: 3306
+        protocol: tcp
