@@ -18,23 +18,31 @@ pipeline {
 //
 //      }
      stage("Install project on test vm"){
+        steps {
         sh "jenkins_scripts/install_test_vm.sh"
+        }
      }
+
      stage("Configure test RDS"){
-//         use secret key
+         steps {
+            }
      }
      stage("Run tests"){
-
+         steps {
+            }
      }
      stage("Login to dockerhub"){
-
+         steps {
+            }
      }
      stage("Upload to dockerhub"){
-
+         steps {
+            }
      }
 
      stage("Deploy with kubernetes"){
-
+         steps {
+            }
      }
   }
   }
