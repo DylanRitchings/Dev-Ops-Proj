@@ -3,7 +3,7 @@ services:
   frontend:
     container_name: frontend
     build: ./frontend
-    image: frontend
+    image: frontend:latest
     ports:
       - target: 5000
         published: 5000
@@ -13,7 +13,7 @@ services:
   backend:
     container_name: backend
     build: ./backend
-    image: backend
+    image: backend:latest
     ports:
     - target: 5001
       published: 5001
@@ -23,7 +23,7 @@ services:
   database:
     container_name: database
     build: ./database
-    image: database
+    image: mysql:latest
     ports:
       - target: 3306
         published: 3306
