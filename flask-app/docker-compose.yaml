@@ -3,7 +3,7 @@ services:
   backend:
     container_name: backend
     build: ./backend
-    image: ./flask-app/backend
+    image: ./backend
     ports:
     - target: 5001
       published: 5001
@@ -16,7 +16,7 @@ services:
   frontend:
     container_name: frontend
     build: ./backend
-    image: ./flask-app/frontend
+    image: ./frontend
     ports:
     - target: 5000
       published: 5000
