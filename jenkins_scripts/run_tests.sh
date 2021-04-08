@@ -1,10 +1,10 @@
 #!/bin/bash
-build_ip="ubuntu@$(cat files/build_ip)"
+test_ip="ubuntu@$(cat files/test_ip)"
 #echo "$build_ip"
 #pwd
 #cd .ssh
 chmod 400 ~/.ssh/vmkey.pem
-ssh -i ~/.ssh/vmkey.pem "$build_ip" << EOF
+ssh -i ~/.ssh/vmkey.pem "$test_ip" << EOF
     ls
     sudo rm -r Dev-Ops-Proj
     git clone https://github.com/DylanRitchings/Dev-Ops-Proj.git
