@@ -14,9 +14,13 @@ pipeline {
   }
 
   stages {
+     stage("Setup database"){
+        steps{
+        }
+     }
      stage("Create and run test images"){
         steps {
-            sh "jenkins_scripts/install_test_vm.sh"
+            sh "jenkins_scripts/run_tests.sh"
         }
      }
 
