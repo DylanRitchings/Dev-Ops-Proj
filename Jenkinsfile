@@ -15,8 +15,6 @@ pipeline {
 
   stages {
      stage("Setup database"){
-        steps{
-        }
      }
      stage("Create and run test images"){
         steps {
