@@ -24,20 +24,11 @@ pipeline {
         }
      }
 
-
-//
-//      stage("Configure test RDS"){
-//          steps {
-//             }
-//      }
-//      stage("Run tests"){
-//          steps {
-//             }
-//      }
-//      stage("Upload to dockerhub"){
-//          steps {
-//             }
-//      }
+     stage("Upload to dockerhub"){
+         steps {
+            sh "jenkins_scripts/dockerhub.sh"
+            }
+     }
 //
 //      stage("Deploy with kubernetes"){
 //          steps {
