@@ -64,6 +64,7 @@ exit
 
 ## Deployment Architecture
  
+ ![Deployment architecture](https://github.com/DylanRitchings/Dev-Ops-Proj/blob/main/diagrams/diagram.png)
 ### Terraform
 Terraform is used to create the layout in AWS. With terraform a VPC was created that contained 4 subnets. 2 subnets contain a test and production RDS. One subnet contains a build VM. The final subnet contains the production vm. Security groups are used define what ports each vm and database has open. In a real world application the test vm and RDSs would be private but due to time constraints where not for this project.
 ### Ansible 
