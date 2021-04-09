@@ -75,6 +75,11 @@ Jenkins is used to run tests, docker and kuberenetes.
 ## Docker
 Docker compose was used to create containers which would have tests run on them. These tests were run on the test vm.
 Containers where then uploaded as images to dockerhub.
+## Kubernetes
+Kubernetes was meant to be used for deploying the application into a cluster for production
+
+## NGINX
+NGINX was meant to be used as a reverse proxy to direct traffic to the correct VM.
 
 ### Risk Assessment
 A risk is an event that is uncertain that will cause an effect on an objective.
@@ -88,4 +93,5 @@ A response to the risk is then formulated. The response will either remove the r
 [Risk assessment](https://github.com/DylanRitchings/Dev-Ops-Proj/blob/main/diagrams/Risk%20Register.xlsx)
 
 ### Jira
+Jira was used to manage the project sprints.
 [Jira](https://book-reviewer.atlassian.net/secure/RapidBoard.jspa?projectKey=DO&rapidView=3&view=planning.nodetail&atlOrigin=eyJpIjoiMTI1YzhhN2RhM2MzNGUyYTgxNDUzOTMzNGIzMGQ0N2QiLCJwIjoiaiJ9)
