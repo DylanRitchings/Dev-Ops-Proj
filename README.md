@@ -75,6 +75,10 @@ Jenkins is used to run tests, docker and kuberenetes.
 ## Docker
 Docker compose was used to create containers which have tests run on them. These tests were run on the test vm.
 Containers are then uploaded as images to dockerhub. This was managed by Jenkins
+### Test results
+These are the results for the test run using pytest
+![test1](https://github.com/DylanRitchings/Dev-Ops-Proj/blob/main/diagrams/test1.png)
+![test2](https://github.com/DylanRitchings/Dev-Ops-Proj/blob/main/diagrams/test2.png)
 ## Kubernetes
 Kubernetes was meant to be used for deploying the application into a cluster for production
 
