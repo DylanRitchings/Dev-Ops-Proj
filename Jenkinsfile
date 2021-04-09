@@ -30,7 +30,6 @@ pipeline {
             sh "jenkins_scripts/dockerhub.sh"
             }
      }
-//
 //      stage("Deploy with kubernetes"){
 //          steps {
 //
