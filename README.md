@@ -84,4 +84,5 @@ A risk is an event that is uncertain that will cause an effect on an objective.
 * **Impact:** How much the category is impacted if the event occurs.
 * **Matrix:** A matrix is used to assess the priority of each risk.
 A response to the risk is then formulated. The response will either remove the risk completely, reduce its serverity or explain what was done to attempt to reduce the serverity.
+
 [Risk assessment](https://github.com/DylanRitchings/Dev-Ops-Proj/blob/main/diagrams/Risk%20Register.xlsx)
