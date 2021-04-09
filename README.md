@@ -73,8 +73,8 @@ Ansible installs the required software onto the VMs.
 ### Jenkins
 Jenkins is used to run tests, docker and kuberenetes.
 ## Docker
-Docker compose was used to create containers which would have tests run on them. These tests were run on the test vm.
-Containers where then uploaded as images to dockerhub.
+Docker compose was used to create containers which have tests run on them. These tests were run on the test vm.
+Containers are then uploaded as images to dockerhub. This was managed by Jenkins
 ## Kubernetes
 Kubernetes was meant to be used for deploying the application into a cluster for production
 
