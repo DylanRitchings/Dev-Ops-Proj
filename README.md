@@ -75,3 +75,6 @@ Jenkins is used to run tests, docker and kuberenetes.
 ## Docker
 Docker compose was used to create containers which would have tests run on them. These tests were run on the test vm.
 Containers where then uploaded as images to dockerhub.
+
+### Risk Assessment
+[Risk assessment](https://github.com/DylanRitchings/Dev-Ops-Proj/blob/main/diagrams/Risk%20Register.xlsx)
