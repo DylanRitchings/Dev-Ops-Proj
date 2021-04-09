@@ -86,3 +86,6 @@ A risk is an event that is uncertain that will cause an effect on an objective.
 A response to the risk is then formulated. The response will either remove the risk completely, reduce its serverity or explain what was done to attempt to reduce the serverity.
 
 [Risk assessment](https://github.com/DylanRitchings/Dev-Ops-Proj/blob/main/diagrams/Risk%20Register.xlsx)
+
+### Jira
+[Jira](https://book-reviewer.atlassian.net/secure/RapidBoard.jspa?projectKey=DO&rapidView=3&view=planning.nodetail&atlOrigin=eyJpIjoiMTI1YzhhN2RhM2MzNGUyYTgxNDUzOTMzNGIzMGQ0N2QiLCJwIjoiaiJ9)
