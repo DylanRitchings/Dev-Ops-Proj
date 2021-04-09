@@ -23,6 +23,18 @@ resource "aws_subnet" "pub_sub" {
   }
 }
 
+
+resource "aws_subnet" "pub_sub2" {
+  cidr_block              = var.pub_sub_cidr
+  availability_zone       = data.aws_availability_zones.available.names[1]
+  vpc_id = aws_vpc.vpc.id
+  map_public_ip_on_launch = true
+
+  tags = {
+    Name = "public2"
+    project = "dev_ops_project"
+  }
+}
 resource "aws_subnet" "not_priv_sub" {
   cidr_block              = var.not_priv_sub_cidr
   availability_zone       = data.aws_availability_zones.available.names[0]
