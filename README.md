@@ -57,7 +57,6 @@ exit
 # On browser go to build VM ip on port 8080
 
 # Start configuring jenkins
-# 
 ```
 
 
@@ -66,18 +65,12 @@ exit
 ## Deployment Architecture
  
 ### Terraform
-
+Terraform is used to create the layout in AWS. With terraform a VPC was created that contained 4 subnets. 2 subnets contain a test and production RDS. One subnet contains a build VM. The final subnet contains the production vm. Security groups are used define what ports each vm and database has open. In a real world application the test vm and RDSs would be private but due to time constraints where not for this project.
 ### Ansible 
-
-## Testing and CI Pipeline
-
+Ansible installs the required software onto the VMs.
+## Testing and CI Pipeline (Build VM)
 ### Jenkins
-Webhooks
-
-
-## Database 
-
-## Project Planning
-
-
-### Reverse Proxy (NGINX)
+Jenkins is used to run tests, docker and kuberenetes.
+## Docker
+Docker compose was used to create containers which would have tests run on them. These tests were run on the test vm.
+Containers where then uploaded as images to dockerhub.
